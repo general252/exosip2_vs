@@ -27,7 +27,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
@@ -37,7 +37,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
@@ -147,6 +147,8 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\c-ares\ares_create_query.c" />
+    <ClCompile Include="..\..\..\c-ares\ares_platform.c" />
     <ClCompile Include="..\..\..\c-ares\ares__close_sockets.c" />
     <ClCompile Include="..\..\..\c-ares\ares__get_hostent.c" />
     <ClCompile Include="..\..\..\c-ares\ares__read_line.c" />
@@ -202,6 +204,7 @@
     <ClInclude Include="..\..\..\c-ares\ares_library_init.h" />
     <ClInclude Include="..\..\..\c-ares\ares_llist.h" />
     <ClInclude Include="..\..\..\c-ares\ares_nowarn.h" />
+    <ClInclude Include="..\..\..\c-ares\ares_platform.h" />
     <ClInclude Include="..\..\..\c-ares\ares_private.h" />
     <ClInclude Include="..\..\..\c-ares\ares_rules.h" />
     <ClInclude Include="..\..\..\c-ares\ares_setup.h" />
