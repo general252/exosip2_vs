@@ -8,10 +8,13 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osip2", "..\..\..\osip\plat
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libcares", "libcares.vcxproj", "{6BCE0E64-5A72-4243-B385-88E62C8E398A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "demo", "..\..\..\demo\osipDemo.vcxproj", "{E89FCFFD-780A-4012-B490-B34DF91EF9F1}"
-	ProjectSection(ProjectDependencies) = postProject
-		{4EA67539-9EE9-4065-BD39-87E517FD8262} = {4EA67539-9EE9-4065-BD39-87E517FD8262}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "uas", "..\..\..\demo\uas\uas.vcxproj", "{D2F50861-F052-4C50-9855-756195B600D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "eXosipDemo", "eXosipDemo", "{6A21FDC8-C0AC-4F3A-BFBD-18BF1B96FDC3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "uac", "..\..\..\demo\uac\uac.vcxproj", "{955D4955-89BF-4DF3-95F7-F523CA10EBF3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osipDemo", "..\..\..\demo\osipDemo\osipDemo.vcxproj", "{E89FCFFD-780A-4012-B490-B34DF91EF9F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +56,18 @@ Global
 		{6BCE0E64-5A72-4243-B385-88E62C8E398A}.Release|Win32.Build.0 = Release|Win32
 		{6BCE0E64-5A72-4243-B385-88E62C8E398A}.Release|x64.ActiveCfg = Release|x64
 		{6BCE0E64-5A72-4243-B385-88E62C8E398A}.Release|x64.Build.0 = Release|x64
+		{D2F50861-F052-4C50-9855-756195B600D8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D2F50861-F052-4C50-9855-756195B600D8}.Debug|Win32.Build.0 = Debug|Win32
+		{D2F50861-F052-4C50-9855-756195B600D8}.Debug|x64.ActiveCfg = Debug|Win32
+		{D2F50861-F052-4C50-9855-756195B600D8}.Release|Win32.ActiveCfg = Release|Win32
+		{D2F50861-F052-4C50-9855-756195B600D8}.Release|Win32.Build.0 = Release|Win32
+		{D2F50861-F052-4C50-9855-756195B600D8}.Release|x64.ActiveCfg = Release|Win32
+		{955D4955-89BF-4DF3-95F7-F523CA10EBF3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{955D4955-89BF-4DF3-95F7-F523CA10EBF3}.Debug|Win32.Build.0 = Debug|Win32
+		{955D4955-89BF-4DF3-95F7-F523CA10EBF3}.Debug|x64.ActiveCfg = Debug|Win32
+		{955D4955-89BF-4DF3-95F7-F523CA10EBF3}.Release|Win32.ActiveCfg = Release|Win32
+		{955D4955-89BF-4DF3-95F7-F523CA10EBF3}.Release|Win32.Build.0 = Release|Win32
+		{955D4955-89BF-4DF3-95F7-F523CA10EBF3}.Release|x64.ActiveCfg = Release|Win32
 		{E89FCFFD-780A-4012-B490-B34DF91EF9F1}.Debug|Win32.ActiveCfg = Debug|Win32
 		{E89FCFFD-780A-4012-B490-B34DF91EF9F1}.Debug|Win32.Build.0 = Debug|Win32
 		{E89FCFFD-780A-4012-B490-B34DF91EF9F1}.Debug|x64.ActiveCfg = Debug|Win32
@@ -62,5 +77,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D2F50861-F052-4C50-9855-756195B600D8} = {6A21FDC8-C0AC-4F3A-BFBD-18BF1B96FDC3}
+		{955D4955-89BF-4DF3-95F7-F523CA10EBF3} = {6A21FDC8-C0AC-4F3A-BFBD-18BF1B96FDC3}
+		{E89FCFFD-780A-4012-B490-B34DF91EF9F1} = {6A21FDC8-C0AC-4F3A-BFBD-18BF1B96FDC3}
 	EndGlobalSection
 EndGlobal
