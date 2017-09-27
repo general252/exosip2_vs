@@ -1,0 +1,10 @@
+# This is a comment
+prefix=C:/Jenkins/workspace/linphone-cmake-builder-desktop-win32/OUTPUT
+exec_prefix=C:/Jenkins/workspace/linphone-cmake-builder-desktop-win32/OUTPUT/bin
+includedir=C:/Jenkins/workspace/linphone-cmake-builder-desktop-win32/OUTPUT/include
+
+Name: oRTP 
+Description: Implement the RFC3550 (RTP) with a easy to use API with high and low level access.
+Version: 0.24.2
+Libs: -LC:/Jenkins/workspace/linphone-cmake-builder-desktop-win32/OUTPUT/lib -lortp 
+Cflags: -IC:/Jenkins/workspace/linphone-cmake-builder-desktop-win32/OUTPUT/include 

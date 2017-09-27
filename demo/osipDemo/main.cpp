@@ -1,4 +1,3 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include <eXosip2/eXosip.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,7 +10,7 @@
 // ²Î¿¼:
 // http://blog.sina.com.cn/s/blog_6a0a1ba30100juzx.html
 // http://blog.csdn.net/bikeytang/article/details/53448735
-int main(int argc, char *argv[])
+int main1(int argc, char *argv[])
 {
     struct eXosip_t * sip = NULL;
     eXosip_event_t *je;
