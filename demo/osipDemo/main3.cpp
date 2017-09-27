@@ -22,17 +22,23 @@
 #define WAIT_TIMER 200
 #define REG_TIMER 30*1000
 
-int doing;
-int rtp_port;
-int dtmfing, calling, picked;
-int call_id, dialog_id;
+int doing = 1; /* 事件循环开关 */
+int rtp_port = 9900; //rtp　媒体本地端口
+int dtmfing = 0; 
+int calling = 0;/* 是否正在被叫(判断ack类型) */
+int picked = 0;
+int call_id = 0;
+int dialog_id = 0;
 
 char *dtmf_str = "this is dtmf";
 //CString dtmf_str; 
 //char *server_url="192.168.18.249"; 
 char *server_url = "192.168.6.80";
+char localip[128] = { 0 };
 char *server_port = "5060";
+int i_server_port = 0;
 char *local_port = "5000";
+int i_local_port = 0;
 char *username = "200";
 char *password = "200";
 char *telNum = "300";
@@ -44,16 +50,15 @@ RtpProfile *profile = NULL;
 RtpSession *session = NULL;
 OrtpEvQueue *q = NULL;
 
-int sip_init();
+int my_sip_init(bool isAsServer);
 void OnHang();
 int sip_ua_monitor();
 int real_send_register(int expires);
 int build_media(int local_port, const char *remote_ip, int remote_port, int payload, const char *fmtp, int jitter, int ec, int bitrate);
 
-int main()
+int main(int argc, char* argv[])
 {
     //char *payload_str;
-    char localip[128] = "192.168.6.80";
     char tmp[4096];
     char command;
     char dtmf[50] = { 0 };
@@ -65,25 +70,28 @@ int main()
     osip_message_t *info = NULL;
     osip_message_t *message = NULL;
 
-    char source_call[100];
-    char dest_call[100];
+    char source_call[100] = { 0 };
+    char dest_call[100] = { 0 };
 
-    doing = 1; /* 事件循环开关 */
-    calling = 0; /* 是否正在被叫(判断ack类型) */
-    picked = 0;
-    dtmfing = 0;
+    bool isAsServer = false;
+    if (argc >= 2) {
+        isAsServer = (strchr(argv[1], 's') || strchr(argv[1], 'S'));
+    }
 
-    if (0 != sip_init())
-    {
+    i_server_port = atoi(server_port);
+    i_local_port = atoi(local_port);
+
+    if (0 != my_sip_init(isAsServer)) {
         printf("Quit!\n");
         return -1;
     }
 
+    eXosip_guess_localip(excontext, AF_INET, localip, sizeof(localip));
 
-    rtp_port = 9900; //rtp　媒体本地端口  codec_id = 0; //编码 G711uLaw 0 
+    printf("start as %s : %d\n", isAsServer ? "server" : "client", isAsServer ? i_server_port : i_local_port);
+    printf("server: %s:%d    local: %s:%d\n\n\n", server_url, i_server_port, localip, i_local_port);
 
-    call_id = 0;
-    dialog_id = 0;
+    //编码 G711uLaw 0
 
 
     printf("r 向服务器注册\n\n");
@@ -108,7 +116,7 @@ int main()
         case 'r':// 先清除鉴权信息，再应用新输入的鉴权信息 
         {
             real_send_register(1800);
-            Sleep(5000);
+            Sleep(3000);
             real_send_register(1800);
         } break;
         case 'i':
@@ -125,9 +133,6 @@ int main()
                 printf("Intial INVITE failed!\n");
             }
 
-            char localip[128];
-
-            eXosip_guess_localip(excontext, AF_INET, localip, 128);
             snprintf(tmp, 4096,
                 "v=0\r\n"
                 "o=youtoo 1 1 IN IP4 %s\r\n"
@@ -205,98 +210,10 @@ int main()
     return(0);
 }
 
-
-
-
-
-
-int build_media(int local_port, const char *remote_ip, int remote_port, int payload, const char *fmtp, int jitter, int ec, int bitrate)
-{
-    if (payload != 0 && payload != 8)
-    {
-        /* 目前仅支持0,8 711ulaw,711alaw */
-        return -1;
-    }
-
-    PayloadType *pt;
-
-    profile = rtp_profile_clone_full(&av_profile);
-    q = ortp_ev_queue_new();
-
-    pt = rtp_profile_get_payload(profile, payload);
-    if (pt == NULL)
-    {
-        printf("codec error!");
-        return -1;
-    }
-
-    if (fmtp != NULL) payload_type_set_send_fmtp(pt, fmtp);
-    if (bitrate > 0) pt->normal_bitrate = bitrate;
-
-    if (pt->type != PAYLOAD_VIDEO)
-    {
-        printf("audio stream start!");
-        audio = audio_stream_start(profile, local_port, remote_ip, remote_port, payload, jitter, ec);
-        if (audio)
-        {
-            //~session = audio->session;
-            audio->ms.sessions.rtp_session;
-        }
-        else
-        {
-            printf("session error!");
-            return -1;
-        }
-    }
-    else
-    {
-        printf("codec select error!");
-        return -1;
-    }
-
-    rtp_session_register_event_queue(session, q);
-    return 0;
-}
-
-int real_send_register(int expires)
-{
-    char identity[100];
-    char registerer[100];
-    char localip[128];
-    eXosip_guess_localip(excontext, AF_INET, localip, 128);
-    sprintf(identity, "sip:%s@%s:%s", username, localip, local_port);
-    sprintf(registerer, "sip:%s:%s", server_url, server_port);
-
-    osip_message_t *reg = NULL;
-
-    eXosip_lock(excontext);
-    int ret = eXosip_register_build_initial_register(excontext, identity, registerer, NULL, expires, &reg);
-    eXosip_unlock(excontext);
-    if (0 > ret)
-    {
-        printf("register init Failed!");
-        return -1;
-    }
-
-    eXosip_lock(excontext);
-    eXosip_clear_authentication_info(excontext); //去除上次加入的错误认证信息 
-    eXosip_add_authentication_info(excontext, username, username, password, "md5", NULL);
-    ret = eXosip_register_send_register(excontext, ret, reg);
-    eXosip_unlock(excontext);
-    if (0 != ret)
-    {
-        printf("register send Failed!");
-        return -1;
-    }
-
-    return 0;
-}
-
 int sip_ua_monitor()
 {
     int ret = -1;
     char *payload_str; /* 服务器优先编码值 */
-    char localip[128];
     char tmp[4096];
     char dtmf[50] = { 0 };
 
@@ -326,9 +243,7 @@ int sip_ua_monitor()
 
     while (doing)
     {
-        eXosip_lock(excontext);
         uac_e = eXosip_event_wait(excontext, 0, WAIT_TIMER);
-        eXosip_unlock(excontext);
 
         reg_remain = reg_remain - WAIT_TIMER;
         if (reg_remain < 0)
@@ -415,6 +330,7 @@ int sip_ua_monitor()
         {
         case EXOSIP_CALL_SERVERFAILURE:
         case EXOSIP_CALL_RELEASED:
+        {
             /* 服务器错误或对方忙 */
             printf("(对方或服务器正忙!)");
 
@@ -424,10 +340,10 @@ int sip_ua_monitor()
             calling = 0;
 
             printf("Dest or Server Busy!");
-            break;
+        } break;
 
             /* UAS 处理事件 */
-        case EXOSIP_MESSAGE_NEW: //新的消息到来 
+        case EXOSIP_MESSAGE_NEW: //新的消息到来
             printf("EXOSIP_MESSAGE_NEW!\n");
             if (MSG_IS_MESSAGE(uac_e->request)) //如果接受到的消息类型是MESSAGE 
             {
@@ -458,7 +374,6 @@ int sip_ua_monitor()
             dialog_id = uac_e->did;
 
             /* 构建本地SDP消息供媒体建立 */
-            eXosip_guess_localip(excontext, AF_INET, localip, 128);
             snprintf(tmp, 4096,
                 "v=0\r\n"
                 "o=youtoo 1 1 IN IP4 %s\r\n"
@@ -642,6 +557,91 @@ unsigned _stdcall sip_ua_monitor_thread(void*) {
     return sip_ua_monitor();
 }
 
+
+
+
+int build_media(int local_port, const char *remote_ip, int remote_port, int payload, const char *fmtp, int jitter, int ec, int bitrate)
+{
+    if (payload != 0 && payload != 8)
+    {
+        /* 目前仅支持0,8 711ulaw,711alaw */
+        return -1;
+    }
+
+    PayloadType *pt;
+
+    profile = rtp_profile_clone_full(&av_profile);
+    q = ortp_ev_queue_new();
+
+    pt = rtp_profile_get_payload(profile, payload);
+    if (pt == NULL)
+    {
+        printf("codec error!");
+        return -1;
+    }
+
+    if (fmtp != NULL) payload_type_set_send_fmtp(pt, fmtp);
+    if (bitrate > 0) pt->normal_bitrate = bitrate;
+
+    if (pt->type != PAYLOAD_VIDEO)
+    {
+        printf("audio stream start!");
+        audio = audio_stream_start(profile, local_port, remote_ip, remote_port, payload, jitter, ec);
+        if (audio)
+        {
+            //~session = audio->session;
+            audio->ms.sessions.rtp_session;
+        }
+        else
+        {
+            printf("session error!");
+            return -1;
+        }
+    }
+    else
+    {
+        printf("codec select error!");
+        return -1;
+    }
+
+    rtp_session_register_event_queue(session, q);
+    return 0;
+}
+
+int real_send_register(int expires)
+{
+    char identity[100];
+    char registerer[100];
+    sprintf(identity, "sip:%s@%s:%s", username, localip, local_port);
+    sprintf(registerer, "sip:%s:%s", server_url, server_port);
+
+    osip_message_t *reg = NULL;
+
+    eXosip_lock(excontext);
+    int ret = eXosip_register_build_initial_register(excontext, identity, registerer, NULL, expires, &reg);
+    eXosip_unlock(excontext);
+    if (0 > ret)
+    {
+        printf("register init Failed!");
+        return -1;
+    }
+
+    eXosip_lock(excontext);
+    eXosip_clear_authentication_info(excontext); //去除上次加入的错误认证信息 
+    eXosip_add_authentication_info(excontext, username, username, password, "md5", NULL);
+    ret = eXosip_register_send_register(excontext, ret, reg);
+    eXosip_unlock(excontext);
+    if (0 != ret)
+    {
+        printf("register send Failed!");
+        return -1;
+    }
+
+    return 0;
+}
+
+
+// 挂断
 void OnHang()
 {
     int ret;
@@ -667,7 +667,7 @@ void OnHang()
     eXosip_unlock(excontext);
     if (0 != ret)
     {
-        printf("hangup\terminate Failed!\n");
+        printf("hangup terminate Failed!\n");
     }
     else
     {
@@ -679,23 +679,38 @@ void OnHang()
     }
 }
 
-int sip_init()
+
+void __stdcall MyCbSipCallback(osip_message_t * msg, int received)
+{
+    char* dest;
+    size_t length;
+    osip_message_to_str(msg, &dest, &length);
+
+    printf("\n\t\t\t\t\t <#######[%s] sip_method: %s, status_code: %d  %s \n%s\n#######>\n",
+        (received == 1) ? "recv" : "send", msg->sip_method, msg->status_code, msg->reason_phrase,
+        dest);
+}
+
+int my_sip_init(bool isAsServer)
 {
     int ret = 0;
 
     excontext = eXosip_malloc();
     ret = eXosip_init(excontext);
-    eXosip_set_user_agent(excontext, "##YouToo0.1");
-
     if (0 != ret)
     {
         printf("Couldn't initialize eXosip!\n");
         return -1;
     }
 
-    ret = eXosip_listen_addr(excontext, IPPROTO_UDP, NULL, 5000, AF_INET, 0);
-    if (0 != ret)
-    {
+    eXosip_set_user_agent(excontext, "##YouToo0.1");
+
+
+    eXosip_set_cbsip_message(excontext, MyCbSipCallback);
+
+    int port = isAsServer ? i_server_port : i_local_port;
+    ret = eXosip_listen_addr(excontext, IPPROTO_UDP, NULL, port, AF_INET, 0);
+    if (0 != ret) {
         eXosip_quit(excontext);
         printf("Couldn't initialize transport layer!\n");
         return -1;
@@ -714,10 +729,7 @@ int sip_init()
     //ortp_set_log_level_mask(ORTP_MESSAGE|ORTP_WARNING|ORTP_ERROR|ORTP_FATAL); 
 
     /* media */
-    ms_base_init();
-    //ms_voip_init();
-    //ms_plugins_init();
-    //ms_init();
+    ms_init();
 
     return 0;
 }
