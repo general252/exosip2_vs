@@ -1,3 +1,5 @@
+/** 包含注册, 通话. 测试ms_init失败 */
+
 //用osip2 + eXosip2 + ortp + mediastreamer实现的linux简易软电话源代码（可实现通话）
 //http://blog.csdn.net/wanghaobo920/article/details/7993768
 //编译命令：
@@ -56,7 +58,7 @@ int sip_ua_monitor();
 int real_send_register(int expires);
 int build_media(int local_port, const char *remote_ip, int remote_port, int payload, const char *fmtp, int jitter, int ec, int bitrate);
 
-int main(int argc, char* argv[])
+int main3(int argc, char* argv[])
 {
     //char *payload_str;
     char tmp[4096];

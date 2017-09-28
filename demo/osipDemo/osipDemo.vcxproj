@@ -85,9 +85,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CortpClient.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="main2.cpp" />
     <ClCompile Include="main3.cpp" />
+    <ClCompile Include="ortp.cpp" />
+    <ClCompile Include="OrtpServer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CortpClient.h" />
+    <ClInclude Include="OrtpServer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

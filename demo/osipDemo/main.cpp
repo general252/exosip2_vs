@@ -1,3 +1,5 @@
+/** 网上找的测试示例(稍微改动) */
+
 #include <eXosip2/eXosip.h>
 #include <stdio.h>
 #include <stdlib.h>

@@ -1,3 +1,4 @@
+/** osip直接调用示例 */
 /*
 * File:   main.c
 * Author: Soufiane Tarari
