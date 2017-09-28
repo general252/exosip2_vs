@@ -16,6 +16,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "uac", "..\..\..\demo\uac\ua
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osipDemo", "..\..\..\demo\osipDemo\osipDemo.vcxproj", "{E89FCFFD-780A-4012-B490-B34DF91EF9F1}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jrtplibDemo", "..\..\..\demo\jrtplibDemo\jrtplibDemo.vcxproj", "{4B39FFAB-6E3F-4D83-BA8F-D13ED35DABC0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -74,6 +76,12 @@ Global
 		{E89FCFFD-780A-4012-B490-B34DF91EF9F1}.Release|Win32.ActiveCfg = Release|Win32
 		{E89FCFFD-780A-4012-B490-B34DF91EF9F1}.Release|Win32.Build.0 = Release|Win32
 		{E89FCFFD-780A-4012-B490-B34DF91EF9F1}.Release|x64.ActiveCfg = Release|Win32
+		{4B39FFAB-6E3F-4D83-BA8F-D13ED35DABC0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4B39FFAB-6E3F-4D83-BA8F-D13ED35DABC0}.Debug|Win32.Build.0 = Debug|Win32
+		{4B39FFAB-6E3F-4D83-BA8F-D13ED35DABC0}.Debug|x64.ActiveCfg = Debug|Win32
+		{4B39FFAB-6E3F-4D83-BA8F-D13ED35DABC0}.Release|Win32.ActiveCfg = Release|Win32
+		{4B39FFAB-6E3F-4D83-BA8F-D13ED35DABC0}.Release|Win32.Build.0 = Release|Win32
+		{4B39FFAB-6E3F-4D83-BA8F-D13ED35DABC0}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,5 +90,6 @@ Global
 		{D2F50861-F052-4C50-9855-756195B600D8} = {6A21FDC8-C0AC-4F3A-BFBD-18BF1B96FDC3}
 		{955D4955-89BF-4DF3-95F7-F523CA10EBF3} = {6A21FDC8-C0AC-4F3A-BFBD-18BF1B96FDC3}
 		{E89FCFFD-780A-4012-B490-B34DF91EF9F1} = {6A21FDC8-C0AC-4F3A-BFBD-18BF1B96FDC3}
+		{4B39FFAB-6E3F-4D83-BA8F-D13ED35DABC0} = {6A21FDC8-C0AC-4F3A-BFBD-18BF1B96FDC3}
 	EndGlobalSection
 EndGlobal
