@@ -1,0 +1,44 @@
+# CMake generation dependency list for this directory.
+G:/Code/exosip2_vs/jrtplib/CMakeLists.txt
+G:/Code/exosip2_vs/jrtplib/tmp/CMakeFiles/3.7.1/CMakeSystem.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/CMakeSystemSpecificInitialize.cmake
+G:/Code/exosip2_vs/jrtplib/tmp/CMakeFiles/3.7.1/CMakeCCompiler.cmake
+G:/Code/exosip2_vs/jrtplib/tmp/CMakeFiles/3.7.1/CMakeCXXCompiler.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/CMakeSystemSpecificInformation.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/CMakeGenericSystem.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/Platform/Windows.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/Platform/WindowsPaths.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/CMakeCInformation.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/CMakeLanguageInformation.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/Platform/Windows-MSVC-C.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/Platform/Windows-MSVC.cmake
+G:/Code/exosip2_vs/jrtplib/tmp/CMakeFiles/3.7.1/CMakeRCCompiler.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/CMakeRCInformation.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/CMakeCommonLanguageInclude.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/CMakeCXXInformation.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/CMakeLanguageInformation.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/Compiler/MSVC-CXX.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/Platform/Windows-MSVC-CXX.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/Platform/Windows-MSVC.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/CMakeCommonLanguageInclude.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/CheckCXXCompilerFlag.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/CheckCXXSourceCompiles.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/CheckIncludeFile.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/CheckIncludeFileCXX.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/CheckCXXSourceCompiles.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/TestBigEndian.cmake
+G:/Code/exosip2_vs/jrtplib/cmake/Macros.cmake
+G:/Code/exosip2_vs/jrtplib/cmake/FindJThread.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/FindPackageHandleStandardArgs.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/FindPackageMessage.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/CMakeParseArguments.cmake
+G:/Code/exosip2_vs/jrtplib/cmake/FindLIBSRTP.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/FindPkgConfig.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/FindPackageHandleStandardArgs.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/FindPackageMessage.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.7/Modules/CMakeParseArguments.cmake
+G:/Code/exosip2_vs/jrtplib/src/rtptypes.h.in
+G:/Code/exosip2_vs/jrtplib/src/rtpconfig.h.in
+G:/Code/exosip2_vs/jrtplib/src/rtplibraryversioninternal.h.in
+G:/Code/exosip2_vs/jrtplib/cmake/JRTPLIBConfig.cmake.in

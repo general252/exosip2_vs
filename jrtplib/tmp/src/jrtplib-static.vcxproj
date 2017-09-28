@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{110A4E9D-DE77-3711-AD73-977AA3A55ADE}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>jrtplib-static</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">G:\Code\exosip2_vs\jrtplib\tmp\src\Debug\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">jrtplib-static.dir\Debug\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">jrtplib_d</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.lib</TargetExt>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">G:\Code\exosip2_vs\jrtplib\tmp\src\Release\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">jrtplib-static.dir\Release\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">jrtplib</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.lib</TargetExt>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">G:\Code\exosip2_vs\jrtplib\tmp\src\MinSizeRel\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">jrtplib-static.dir\MinSizeRel\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">jrtplib</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.lib</TargetExt>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">G:\Code\exosip2_vs\jrtplib\tmp\src\RelWithDebInfo\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">jrtplib-static.dir\RelWithDebInfo\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">jrtplib</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.lib</TargetExt>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:\Code\exosip2_vs\jrtplib\src;G:\Code\exosip2_vs\jrtplib\tmp\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;JRTPLIB_COMPILING;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;JRTPLIB_COMPILING;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>G:\Code\exosip2_vs\jrtplib\src;G:\Code\exosip2_vs\jrtplib\tmp\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>G:\Code\exosip2_vs\jrtplib\src;G:\Code\exosip2_vs\jrtplib\tmp\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:\Code\exosip2_vs\jrtplib\src;G:\Code\exosip2_vs\jrtplib\tmp\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;JRTPLIB_COMPILING;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;JRTPLIB_COMPILING;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>G:\Code\exosip2_vs\jrtplib\src;G:\Code\exosip2_vs\jrtplib\tmp\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>G:\Code\exosip2_vs\jrtplib\src;G:\Code\exosip2_vs\jrtplib\tmp\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:\Code\exosip2_vs\jrtplib\src;G:\Code\exosip2_vs\jrtplib\tmp\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;JRTPLIB_COMPILING;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;JRTPLIB_COMPILING;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>G:\Code\exosip2_vs\jrtplib\src;G:\Code\exosip2_vs\jrtplib\tmp\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>G:\Code\exosip2_vs\jrtplib\src;G:\Code\exosip2_vs\jrtplib\tmp\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:\Code\exosip2_vs\jrtplib\src;G:\Code\exosip2_vs\jrtplib\tmp\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;JRTPLIB_COMPILING;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;JRTPLIB_COMPILING;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>G:\Code\exosip2_vs\jrtplib\src;G:\Code\exosip2_vs\jrtplib\tmp\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>G:\Code\exosip2_vs\jrtplib\src;G:\Code\exosip2_vs\jrtplib\tmp\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\src\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule G:/Code/exosip2_vs/jrtplib/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"D:\Program Files (x86)\CMake\bin\cmake.exe" -HG:/Code/exosip2_vs/jrtplib -BG:/Code/exosip2_vs/jrtplib/tmp --check-stamp-file G:\Code\exosip2_vs\jrtplib\tmp\src\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">G:/Code/exosip2_vs/jrtplib/src/CMakeLists.txt;G:\Code\exosip2_vs\jrtplib\src\CMakeLists.txt;G:\Code\exosip2_vs\jrtplib\src\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">G:\Code\exosip2_vs\jrtplib\tmp\src\CMakeFiles\generate.stamp</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule G:/Code/exosip2_vs/jrtplib/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"D:\Program Files (x86)\CMake\bin\cmake.exe" -HG:/Code/exosip2_vs/jrtplib -BG:/Code/exosip2_vs/jrtplib/tmp --check-stamp-file G:\Code\exosip2_vs\jrtplib\tmp\src\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">G:/Code/exosip2_vs/jrtplib/src/CMakeLists.txt;G:\Code\exosip2_vs\jrtplib\src\CMakeLists.txt;G:\Code\exosip2_vs\jrtplib\src\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">G:\Code\exosip2_vs\jrtplib\tmp\src\CMakeFiles\generate.stamp</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule G:/Code/exosip2_vs/jrtplib/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"D:\Program Files (x86)\CMake\bin\cmake.exe" -HG:/Code/exosip2_vs/jrtplib -BG:/Code/exosip2_vs/jrtplib/tmp --check-stamp-file G:\Code\exosip2_vs\jrtplib\tmp\src\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">G:/Code/exosip2_vs/jrtplib/src/CMakeLists.txt;G:\Code\exosip2_vs\jrtplib\src\CMakeLists.txt;G:\Code\exosip2_vs\jrtplib\src\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">G:\Code\exosip2_vs\jrtplib\tmp\src\CMakeFiles\generate.stamp</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule G:/Code/exosip2_vs/jrtplib/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"D:\Program Files (x86)\CMake\bin\cmake.exe" -HG:/Code/exosip2_vs/jrtplib -BG:/Code/exosip2_vs/jrtplib/tmp --check-stamp-file G:\Code\exosip2_vs\jrtplib\tmp\src\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">G:/Code/exosip2_vs/jrtplib/src/CMakeLists.txt;G:\Code\exosip2_vs\jrtplib\src\CMakeLists.txt;G:\Code\exosip2_vs\jrtplib\src\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">G:\Code\exosip2_vs\jrtplib\tmp\src\CMakeFiles\generate.stamp</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\rtcpapppacket.h" />
+    <ClInclude Include="..\..\src\rtcpbyepacket.h" />
+    <ClInclude Include="..\..\src\rtcpcompoundpacket.h" />
+    <ClInclude Include="..\..\src\rtcpcompoundpacketbuilder.h" />
+    <ClInclude Include="..\..\src\rtcppacket.h" />
+    <ClInclude Include="..\..\src\rtcppacketbuilder.h" />
+    <ClInclude Include="..\..\src\rtcprrpacket.h" />
+    <ClInclude Include="..\..\src\rtcpscheduler.h" />
+    <ClInclude Include="..\..\src\rtcpsdesinfo.h" />
+    <ClInclude Include="..\..\src\rtcpsdespacket.h" />
+    <ClInclude Include="..\..\src\rtcpsrpacket.h" />
+    <ClInclude Include="..\..\src\rtcpunknownpacket.h" />
+    <ClInclude Include="..\..\src\rtpaddress.h" />
+    <ClInclude Include="..\..\src\rtpcollisionlist.h" />
+    <ClInclude Include="rtpconfig.h" />
+    <ClInclude Include="..\..\src\rtpdebug.h" />
+    <ClInclude Include="..\..\src\rtpdefines.h" />
+    <ClInclude Include="..\..\src\rtperrors.h" />
+    <ClInclude Include="..\..\src\rtphashtable.h" />
+    <ClInclude Include="..\..\src\rtpinternalsourcedata.h" />
+    <ClInclude Include="..\..\src\rtpipv4address.h" />
+    <ClInclude Include="..\..\src\rtpipv4destination.h" />
+    <ClInclude Include="..\..\src\rtpipv6address.h" />
+    <ClInclude Include="..\..\src\rtpipv6destination.h" />
+    <ClInclude Include="..\..\src\rtpkeyhashtable.h" />
+    <ClInclude Include="..\..\src\rtplibraryversion.h" />
+    <ClInclude Include="..\..\src\rtpmemorymanager.h" />
+    <ClInclude Include="..\..\src\rtpmemoryobject.h" />
+    <ClInclude Include="..\..\src\rtppacket.h" />
+    <ClInclude Include="..\..\src\rtppacketbuilder.h" />
+    <ClInclude Include="..\..\src\rtppollthread.h" />
+    <ClInclude Include="..\..\src\rtprandom.h" />
+    <ClInclude Include="..\..\src\rtprandomrand48.h" />
+    <ClInclude Include="..\..\src\rtprandomrands.h" />
+    <ClInclude Include="..\..\src\rtprandomurandom.h" />
+    <ClInclude Include="..\..\src\rtprawpacket.h" />
+    <ClInclude Include="..\..\src\rtpsession.h" />
+    <ClInclude Include="..\..\src\rtpsessionparams.h" />
+    <ClInclude Include="..\..\src\rtpsessionsources.h" />
+    <ClInclude Include="..\..\src\rtpsourcedata.h" />
+    <ClInclude Include="..\..\src\rtpsources.h" />
+    <ClInclude Include="..\..\src\rtpstructs.h" />
+    <ClInclude Include="..\..\src\rtptimeutilities.h" />
+    <ClInclude Include="..\..\src\rtptransmitter.h" />
+    <ClInclude Include="..\..\src\rtptypes_win.h" />
+    <ClInclude Include="rtptypes.h" />
+    <ClInclude Include="..\..\src\rtpudpv4transmitter.h" />
+    <ClInclude Include="..\..\src\rtpudpv6transmitter.h" />
+    <ClInclude Include="..\..\src\rtpbyteaddress.h" />
+    <ClInclude Include="..\..\src\rtpexternaltransmitter.h" />
+    <ClInclude Include="..\..\src\rtpsecuresession.h" />
+    <ClInclude Include="..\..\src\rtpsocketutil.h" />
+    <ClInclude Include="..\..\src\rtpabortdescriptors.h" />
+    <ClInclude Include="..\..\src\rtpselect.h" />
+    <ClInclude Include="..\..\src\rtptcpaddress.h" />
+    <ClInclude Include="..\..\src\rtptcptransmitter.h" />
+    <ClCompile Include="..\..\src\rtcpapppacket.cpp"  />
+    <ClCompile Include="..\..\src\rtcpbyepacket.cpp"  />
+    <ClCompile Include="..\..\src\rtcpcompoundpacket.cpp"  />
+    <ClCompile Include="..\..\src\rtcpcompoundpacketbuilder.cpp"  />
+    <ClCompile Include="..\..\src\rtcppacket.cpp"  />
+    <ClCompile Include="..\..\src\rtcppacketbuilder.cpp"  />
+    <ClCompile Include="..\..\src\rtcprrpacket.cpp"  />
+    <ClCompile Include="..\..\src\rtcpscheduler.cpp"  />
+    <ClCompile Include="..\..\src\rtcpsdesinfo.cpp"  />
+    <ClCompile Include="..\..\src\rtcpsdespacket.cpp"  />
+    <ClCompile Include="..\..\src\rtcpsrpacket.cpp"  />
+    <ClCompile Include="..\..\src\rtpcollisionlist.cpp"  />
+    <ClCompile Include="..\..\src\rtpdebug.cpp"  />
+    <ClCompile Include="..\..\src\rtperrors.cpp"  />
+    <ClCompile Include="..\..\src\rtpinternalsourcedata.cpp"  />
+    <ClCompile Include="..\..\src\rtpipv4address.cpp"  />
+    <ClCompile Include="..\..\src\rtpipv6address.cpp"  />
+    <ClCompile Include="..\..\src\rtpipv4destination.cpp"  />
+    <ClCompile Include="..\..\src\rtpipv6destination.cpp"  />
+    <ClCompile Include="..\..\src\rtplibraryversion.cpp"  />
+    <ClCompile Include="..\..\src\rtppacket.cpp"  />
+    <ClCompile Include="..\..\src\rtppacketbuilder.cpp"  />
+    <ClCompile Include="..\..\src\rtppollthread.cpp"  />
+    <ClCompile Include="..\..\src\rtprandom.cpp"  />
+    <ClCompile Include="..\..\src\rtprandomrand48.cpp"  />
+    <ClCompile Include="..\..\src\rtprandomrands.cpp"  />
+    <ClCompile Include="..\..\src\rtprandomurandom.cpp"  />
+    <ClCompile Include="..\..\src\rtpsession.cpp"  />
+    <ClCompile Include="..\..\src\rtpsessionparams.cpp"  />
+    <ClCompile Include="..\..\src\rtpsessionsources.cpp"  />
+    <ClCompile Include="..\..\src\rtpsourcedata.cpp"  />
+    <ClCompile Include="..\..\src\rtpsources.cpp"  />
+    <ClCompile Include="..\..\src\rtptimeutilities.cpp"  />
+    <ClCompile Include="..\..\src\rtpudpv4transmitter.cpp"  />
+    <ClCompile Include="..\..\src\rtpudpv6transmitter.cpp"  />
+    <ClCompile Include="..\..\src\rtpbyteaddress.cpp"  />
+    <ClCompile Include="..\..\src\rtpexternaltransmitter.cpp"  />
+    <ClCompile Include="..\..\src\rtpsecuresession.cpp"  />
+    <ClCompile Include="..\..\src\rtpabortdescriptors.cpp"  />
+    <ClCompile Include="..\..\src\rtptcpaddress.cpp"  />
+    <ClCompile Include="..\..\src\rtptcptransmitter.cpp"  />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="G:/Code/exosip2_vs/jrtplib/tmp/ZERO_CHECK.vcxproj">
+      <Project>ACEA3C18-B74C-36D8-9029-2502E2EB6E24</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

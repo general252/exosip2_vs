@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{ACEA3C18-B74C-36D8-9029-2502E2EB6E24}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>ZERO_CHECK</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="CMakeFiles\2bfc3a2748a86f4ecb22a35b82974132\generate.stamp.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Checking Build System</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"D:\Program Files (x86)\CMake\bin\cmake.exe" -HG:/Code/exosip2_vs/jrtplib -BG:/Code/exosip2_vs/jrtplib/tmp --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "$(SolutionPath)"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">G:/Code/exosip2_vs/jrtplib/tmp/CMakeFiles/2bfc3a2748a86f4ecb22a35b82974132/generate.stamp.rule;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeCInformation.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeCXXInformation.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeCommonLanguageInclude.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeGenericSystem.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeLanguageInformation.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeParseArguments.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeRCInformation.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInformation.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInitialize.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CheckCXXCompilerFlag.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CheckCXXSourceCompiles.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CheckIncludeFile.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CheckIncludeFileCXX.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\Compiler\MSVC-CXX.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\FindPackageHandleStandardArgs.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\FindPackageMessage.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\FindPkgConfig.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC-C.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\Platform\Windows.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\Platform\WindowsPaths.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\TestBigEndian.cmake;G:\Code\exosip2_vs\jrtplib\CMakeLists.txt;G:\Code\exosip2_vs\jrtplib\cmake\FindJThread.cmake;G:\Code\exosip2_vs\jrtplib\cmake\FindLIBSRTP.cmake;G:\Code\exosip2_vs\jrtplib\cmake\JRTPLIBConfig.cmake.in;G:\Code\exosip2_vs\jrtplib\cmake\Macros.cmake;G:\Code\exosip2_vs\jrtplib\examples\CMakeLists.txt;G:\Code\exosip2_vs\jrtplib\src\CMakeLists.txt;G:\Code\exosip2_vs\jrtplib\src\rtpconfig.h.in;G:\Code\exosip2_vs\jrtplib\src\rtplibraryversioninternal.h.in;G:\Code\exosip2_vs\jrtplib\src\rtptypes.h.in;G:\Code\exosip2_vs\jrtplib\tests\CMakeLists.txt;G:\Code\exosip2_vs\jrtplib\tmp\CMakeFiles\3.7.1\CMakeCCompiler.cmake;G:\Code\exosip2_vs\jrtplib\tmp\CMakeFiles\3.7.1\CMakeCXXCompiler.cmake;G:\Code\exosip2_vs\jrtplib\tmp\CMakeFiles\3.7.1\CMakeRCCompiler.cmake;G:\Code\exosip2_vs\jrtplib\tmp\CMakeFiles\3.7.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">G:\Code\exosip2_vs\jrtplib\tmp\CMakeFiles\generate.stamp;G:\Code\exosip2_vs\jrtplib\tmp\src\CMakeFiles\generate.stamp;G:\Code\exosip2_vs\jrtplib\tmp\examples\CMakeFiles\generate.stamp;G:\Code\exosip2_vs\jrtplib\tmp\tests\CMakeFiles\generate.stamp</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Checking Build System</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"D:\Program Files (x86)\CMake\bin\cmake.exe" -HG:/Code/exosip2_vs/jrtplib -BG:/Code/exosip2_vs/jrtplib/tmp --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "$(SolutionPath)"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">G:/Code/exosip2_vs/jrtplib/tmp/CMakeFiles/2bfc3a2748a86f4ecb22a35b82974132/generate.stamp.rule;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeCInformation.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeCXXInformation.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeCommonLanguageInclude.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeGenericSystem.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeLanguageInformation.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeParseArguments.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeRCInformation.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInformation.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInitialize.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CheckCXXCompilerFlag.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CheckCXXSourceCompiles.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CheckIncludeFile.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CheckIncludeFileCXX.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\Compiler\MSVC-CXX.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\FindPackageHandleStandardArgs.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\FindPackageMessage.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\FindPkgConfig.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC-C.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\Platform\Windows.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\Platform\WindowsPaths.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\TestBigEndian.cmake;G:\Code\exosip2_vs\jrtplib\CMakeLists.txt;G:\Code\exosip2_vs\jrtplib\cmake\FindJThread.cmake;G:\Code\exosip2_vs\jrtplib\cmake\FindLIBSRTP.cmake;G:\Code\exosip2_vs\jrtplib\cmake\JRTPLIBConfig.cmake.in;G:\Code\exosip2_vs\jrtplib\cmake\Macros.cmake;G:\Code\exosip2_vs\jrtplib\examples\CMakeLists.txt;G:\Code\exosip2_vs\jrtplib\src\CMakeLists.txt;G:\Code\exosip2_vs\jrtplib\src\rtpconfig.h.in;G:\Code\exosip2_vs\jrtplib\src\rtplibraryversioninternal.h.in;G:\Code\exosip2_vs\jrtplib\src\rtptypes.h.in;G:\Code\exosip2_vs\jrtplib\tests\CMakeLists.txt;G:\Code\exosip2_vs\jrtplib\tmp\CMakeFiles\3.7.1\CMakeCCompiler.cmake;G:\Code\exosip2_vs\jrtplib\tmp\CMakeFiles\3.7.1\CMakeCXXCompiler.cmake;G:\Code\exosip2_vs\jrtplib\tmp\CMakeFiles\3.7.1\CMakeRCCompiler.cmake;G:\Code\exosip2_vs\jrtplib\tmp\CMakeFiles\3.7.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">G:\Code\exosip2_vs\jrtplib\tmp\CMakeFiles\generate.stamp;G:\Code\exosip2_vs\jrtplib\tmp\src\CMakeFiles\generate.stamp;G:\Code\exosip2_vs\jrtplib\tmp\examples\CMakeFiles\generate.stamp;G:\Code\exosip2_vs\jrtplib\tmp\tests\CMakeFiles\generate.stamp</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Checking Build System</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"D:\Program Files (x86)\CMake\bin\cmake.exe" -HG:/Code/exosip2_vs/jrtplib -BG:/Code/exosip2_vs/jrtplib/tmp --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "$(SolutionPath)"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">G:/Code/exosip2_vs/jrtplib/tmp/CMakeFiles/2bfc3a2748a86f4ecb22a35b82974132/generate.stamp.rule;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeCInformation.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeCXXInformation.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeCommonLanguageInclude.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeGenericSystem.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeLanguageInformation.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeParseArguments.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeRCInformation.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInformation.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInitialize.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CheckCXXCompilerFlag.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CheckCXXSourceCompiles.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CheckIncludeFile.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CheckIncludeFileCXX.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\Compiler\MSVC-CXX.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\FindPackageHandleStandardArgs.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\FindPackageMessage.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\FindPkgConfig.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC-C.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\Platform\Windows.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\Platform\WindowsPaths.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\TestBigEndian.cmake;G:\Code\exosip2_vs\jrtplib\CMakeLists.txt;G:\Code\exosip2_vs\jrtplib\cmake\FindJThread.cmake;G:\Code\exosip2_vs\jrtplib\cmake\FindLIBSRTP.cmake;G:\Code\exosip2_vs\jrtplib\cmake\JRTPLIBConfig.cmake.in;G:\Code\exosip2_vs\jrtplib\cmake\Macros.cmake;G:\Code\exosip2_vs\jrtplib\examples\CMakeLists.txt;G:\Code\exosip2_vs\jrtplib\src\CMakeLists.txt;G:\Code\exosip2_vs\jrtplib\src\rtpconfig.h.in;G:\Code\exosip2_vs\jrtplib\src\rtplibraryversioninternal.h.in;G:\Code\exosip2_vs\jrtplib\src\rtptypes.h.in;G:\Code\exosip2_vs\jrtplib\tests\CMakeLists.txt;G:\Code\exosip2_vs\jrtplib\tmp\CMakeFiles\3.7.1\CMakeCCompiler.cmake;G:\Code\exosip2_vs\jrtplib\tmp\CMakeFiles\3.7.1\CMakeCXXCompiler.cmake;G:\Code\exosip2_vs\jrtplib\tmp\CMakeFiles\3.7.1\CMakeRCCompiler.cmake;G:\Code\exosip2_vs\jrtplib\tmp\CMakeFiles\3.7.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">G:\Code\exosip2_vs\jrtplib\tmp\CMakeFiles\generate.stamp;G:\Code\exosip2_vs\jrtplib\tmp\src\CMakeFiles\generate.stamp;G:\Code\exosip2_vs\jrtplib\tmp\examples\CMakeFiles\generate.stamp;G:\Code\exosip2_vs\jrtplib\tmp\tests\CMakeFiles\generate.stamp</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Checking Build System</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"D:\Program Files (x86)\CMake\bin\cmake.exe" -HG:/Code/exosip2_vs/jrtplib -BG:/Code/exosip2_vs/jrtplib/tmp --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "$(SolutionPath)"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">G:/Code/exosip2_vs/jrtplib/tmp/CMakeFiles/2bfc3a2748a86f4ecb22a35b82974132/generate.stamp.rule;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeCInformation.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeCXXInformation.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeCommonLanguageInclude.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeGenericSystem.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeLanguageInformation.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeParseArguments.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeRCInformation.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInformation.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CMakeSystemSpecificInitialize.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CheckCXXCompilerFlag.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CheckCXXSourceCompiles.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CheckIncludeFile.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\CheckIncludeFileCXX.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\Compiler\MSVC-CXX.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\FindPackageHandleStandardArgs.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\FindPackageMessage.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\FindPkgConfig.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC-C.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\Platform\Windows-MSVC.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\Platform\Windows.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\Platform\WindowsPaths.cmake;D:\Program Files (x86)\CMake\share\cmake-3.7\Modules\TestBigEndian.cmake;G:\Code\exosip2_vs\jrtplib\CMakeLists.txt;G:\Code\exosip2_vs\jrtplib\cmake\FindJThread.cmake;G:\Code\exosip2_vs\jrtplib\cmake\FindLIBSRTP.cmake;G:\Code\exosip2_vs\jrtplib\cmake\JRTPLIBConfig.cmake.in;G:\Code\exosip2_vs\jrtplib\cmake\Macros.cmake;G:\Code\exosip2_vs\jrtplib\examples\CMakeLists.txt;G:\Code\exosip2_vs\jrtplib\src\CMakeLists.txt;G:\Code\exosip2_vs\jrtplib\src\rtpconfig.h.in;G:\Code\exosip2_vs\jrtplib\src\rtplibraryversioninternal.h.in;G:\Code\exosip2_vs\jrtplib\src\rtptypes.h.in;G:\Code\exosip2_vs\jrtplib\tests\CMakeLists.txt;G:\Code\exosip2_vs\jrtplib\tmp\CMakeFiles\3.7.1\CMakeCCompiler.cmake;G:\Code\exosip2_vs\jrtplib\tmp\CMakeFiles\3.7.1\CMakeCXXCompiler.cmake;G:\Code\exosip2_vs\jrtplib\tmp\CMakeFiles\3.7.1\CMakeRCCompiler.cmake;G:\Code\exosip2_vs\jrtplib\tmp\CMakeFiles\3.7.1\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">G:\Code\exosip2_vs\jrtplib\tmp\CMakeFiles\generate.stamp;G:\Code\exosip2_vs\jrtplib\tmp\src\CMakeFiles\generate.stamp;G:\Code\exosip2_vs\jrtplib\tmp\examples\CMakeFiles\generate.stamp;G:\Code\exosip2_vs\jrtplib\tmp\tests\CMakeFiles\generate.stamp</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
