@@ -51,7 +51,7 @@ public:
 
     std::string GetFormatHeader() {
         std::stringstream stream;
-        stream << "<sip: " << addrCode << "@" << addrIp << ":" << addrPort << ">";
+        stream << "<sip:" << addrCode << "@" << addrIp << ":" << addrPort << ">";
         return stream.str();
     }
     //Ö÷»úÃû³Æ

@@ -32,7 +32,6 @@ QQ：1269122125
 const char* LISTEN_ADDR = "192.168.6.80";
 //本地监听端口
 const char* UACPORT = "5061";
-const int UACPORTINT = 5061;
 //本UAC地址编码
 const char* UACCODE = "100110000201000000";
 //本地UAC密码
@@ -70,7 +69,7 @@ public:
     }
     std::string GetFormatHeader() {
         std::stringstream stream;
-        stream << "sip: " << addrCode << "@" << addrIp << ":" << addrPort;
+        stream << "sip:" << addrCode << "@" << addrIp << ":" << addrPort;
         return stream.str();
     }
     //主机名称
@@ -152,7 +151,7 @@ int main()
     eXosip_set_user_agent(excontext, NULL);
 
     //监听
-    result = eXosip_listen_addr(excontext, IPPROTO_UDP, NULL, UACPORTINT, AF_INET, 0);
+    result = eXosip_listen_addr(excontext, IPPROTO_UDP, NULL, atoi(UACPORT), AF_INET, 0);
     assert(OSIP_SUCCESS == result);
 
     //设置监听网卡
