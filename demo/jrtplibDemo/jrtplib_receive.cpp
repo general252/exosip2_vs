@@ -4,77 +4,57 @@
 *       Author: licaibiao
 *   LastChange: 2017-04-10
 * =============================================================================*/
-#include <jrtplib3/rtpsession.h>
-#include <jrtplib3/rtpudpv4transmitter.h>
-#include <jrtplib3/rtpipv4address.h>
-#include <jrtplib3/rtpsessionparams.h>
-#include <jrtplib3/rtperrors.h>
-#include <jrtplib3/rtplibraryversion.h>
-#include <jrtplib3/rtppacket.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <iostream>
-#include <string>
+#include "jrtplib_head.h"
 
-using namespace jrtplib;
 
-#ifdef _DEBUG
-#   pragma comment(lib, "jrtplib_d.lib")
-#else
-#   pragma comment(lib, "jrtplib.lib")
-#endif // _DEBUG
-
-#define checkerror(rtperr) { if (rtperr < 0) { std::cout << "ERROR: " << RTPGetErrorString(rtperr) << std::endl; exit(-1); }}
-
-int main_recv(void)
+int main_recv(uint16_t rtp_port, void (*OnRecvPacket)(char* buffer, int len))
 {
-    RTPSession sess;
-    uint16_t portbase = 6664;
+    MyRTPSession rtpsession;
     int status;
-    bool done = false;
 
-    RTPUDPv4TransmissionParams transparams;
-    RTPSessionParams sessparams;
+    jrtplib::RTPSessionParams sessparams;
     sessparams.SetOwnTimestampUnit(1.0 / 10.0);
     sessparams.SetAcceptOwnPackets(true);
 
-    transparams.SetPortbase(portbase);
-    status = sess.Create(sessparams, &transparams);
+    jrtplib::RTPUDPv4TransmissionParams transparams;
+    transparams.SetPortbase(rtp_port);
+    status = rtpsession.Create(sessparams, &transparams); // °ó¶¨¶Ë¿Ú(rtp+rtcp)
     checkerror(status);
 
-    sess.BeginDataAccess();
-    RTPTime delay(0.020);
-    RTPTime starttime = RTPTime::CurrentTime();
 
-    while (!done)
+    jrtplib::RTPTime delay(0.020);
+    while (true)
     {
-        status = sess.Poll();
+        jrtplib::RTPTime::Wait(delay);
+
+        status = rtpsession.Poll();
         checkerror(status);
 
-        if (sess.GotoFirstSourceWithData())
-        {
-            do
-            {
-                RTPPacket *pack;
-
-                while ((pack = sess.GetNextPacket()) != NULL)
-                {
-                    std::cout << pack->GetPayloadData() << std::endl;
-                    sess.DeletePacket(pack);
-                }
-            } while (sess.GotoNextSourceWithData());
+        if (false == rtpsession.GotoFirstSourceWithData()) {
+            continue;
         }
 
-        RTPTime::Wait(delay);
-        RTPTime t = RTPTime::CurrentTime();
-        t -= starttime;
-        if (t > RTPTime(60.0))
-            done = true;
+        do
+        {
+            jrtplib::RTPPacket *pack = NULL;
+            while (true)
+            {
+                pack = rtpsession.GetNextPacket();
+                if (pack != NULL) {
+                    OnRecvPacket((char*)pack->GetPayloadData(), pack->GetPayloadLength());
+
+                    rtpsession.DeletePacket(pack);
+                }
+                else {
+                    break;
+                }
+            }
+
+        } while (rtpsession.GotoNextSourceWithData());
     }
 
-    sess.EndDataAccess();
-    delay = RTPTime(10.0);
-    sess.BYEDestroy(delay, 0, 0);
+
+    rtpsession.BYEDestroy(jrtplib::RTPTime(10.0), 0, 0);
 
     return 0;
 }
