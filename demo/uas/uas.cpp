@@ -450,6 +450,8 @@ void Register_SendAnswer(sipRegisterInfo& info)
                 << "\",algorithm=" << algorithm;
 
             osip_message_set_header(answer, "WWW-Authenticate", stream.str().c_str());
+            osip_message_set_header(answer, "MyHead", "this is my head 不要包含逗号 查看WWW-Authenticate");
+            osip_message_set_header(answer, "MyHead", stream.str().c_str());
             std::cout << "发送401报文" << std::endl;
         }
         else if (iStatus == 200)

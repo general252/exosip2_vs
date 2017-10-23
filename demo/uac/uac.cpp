@@ -171,6 +171,17 @@ int main()
             continue;
         }
 
+        // 打印未识别的SIP头信息
+        for (int head_index = 0; ; head_index++)
+        {
+            osip_header_t* my_header = NULL;
+            head_index = osip_message_header_get_byname(je->response, "MyHead", head_index, &my_header);
+            if (-1 ==head_index || NULL == my_header) { break; }
+
+            printf("自定义头: <%s>:<%s>\n", my_header->hname, my_header->hvalue);
+        }
+
+
         //eXosip库默认处理
         {
             //一般处理401/407采用库默认处理
